@@ -1,6 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-
+import Images from "./Images.js"
+import FortuneReveal from './FortuneReveal'
 
 function App() {
   const [fortune, setFortune] = useState('');
@@ -28,15 +29,24 @@ function App() {
     <main>
       <div>
         <h1>magic 8 ball time</h1>
+        <Images />
         <button onClick={getResults} className={isActive ? "active" : ""}>click to get fortune</button> 
-        {fortune && <p className="">{fortune}</p>}
-        <p>type your question above</p>
+        {
+          fortune && 
+          <div className="clicked-fortune">
+            <FortuneReveal/>
+            <p className="fortune-message clicked">{fortune}</p>
+          </div>
+        }
       </div>
     </main>
   )
 }
 
 export default App;
+
+
+// onChange = {< FortuneReveal className = "clicked" />}
 
 // return (
 //     <div>
