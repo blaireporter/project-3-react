@@ -2,6 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import Images from "./Images.js"
 import FortuneReveal from './FortuneReveal'
+import Input from './Input';
 
 function App() {
   const [fortune, setFortune] = useState('');
@@ -29,15 +30,16 @@ function App() {
     <main>
       <div>
         <h1>magic 8 ball time</h1>
+        <Input/>
         <Images />
-        <button onClick={getResults} className={isActive ? "active" : ""}>click to get fortune</button> 
+        <button type="submit" value="submit" onClick={getResults} className={isActive ? "active" : ""}>click to get fortune</button> 
         {
           fortune && 
           <div className="clicked-fortune">
             <FortuneReveal/>
             <p className="fortune-message clicked">{fortune}</p>
           </div>
-        }
+        };
       </div>
     </main>
   )

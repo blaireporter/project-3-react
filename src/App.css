@@ -43,20 +43,31 @@ img {
     position: relative;
     z-index: 1;
     display: block;
-    top: -23px;
+    top: -50px;
     z-index: 1;
     opacity: 100%;
 }
-
 .fortune-message {
+  font-size: 0.9rem;
   position: relative;
-  display:block;
+  display: block;
   color: white;
-  text-align: center;
-  margin-top: -300px;
+  margin-top: -320px;
   z-index: 10;
-
+  text-align: center;
 }
+
+input {
+  display: flex;
+}
+
+input[type="text"]{
+  font-size: 30px;
+}
+
+
+
+
 
 .clicked {
     /* opacity: 100%; */
@@ -87,5 +98,7 @@ img {
 0% {opacity:0;}
 100% {opacity:1;}
 }
+
+
 
 
