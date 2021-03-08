@@ -6,7 +6,7 @@ import Input from './Input';
 
 function App() {
   const [fortune, setFortune] = useState('');
-  const [isActive, setIsActive] = useState(false)
+  const [isActive] = useState(false)
 
   useEffect(() => {
     // getResults();
