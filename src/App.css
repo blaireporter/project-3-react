@@ -12,12 +12,15 @@ body {
   height: 100vh;
 }
 
-.magic-eight-ball {
-    display: block;
-    position: relative;
+main {
+  display: flex;
 }
+.info,
+.eight-ball {
+  width: 50%;
+}
+
 img {
-    position: absolute;
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -26,36 +29,43 @@ img {
     right: 0;
     text-align: center;
 }
-
-.bottom {
-    z-index: 0;
-}
   
   .top {
     z-index: 2;
   }
   
-  .clicked-fortune {
+  .magic-eight-ball {
     position: relative;
   }
   
-  .clicked-fortune img {
+  .fortune-appear img {
     position: relative;
     z-index: 1;
     display: block;
-    top: -50px;
-    z-index: 1;
+    z-index: 4;
     opacity: 100%;
+    top: -310px;
 }
-.fortune-message {
-  font-size: 0.9rem;
+
+.ball {
+  /* font-size: 0.9rem; */
   position: relative;
   display: block;
   color: white;
-  margin-top: -320px;
-  z-index: 10;
+  width: 100%;  
   text-align: center;
 }
+
+.ball p {
+  position: relative;
+  font-size: 30px;
+  z-index: 100;
+  width: 30%;
+  margin: 0 auto;
+}
+
+/* .fortune-message {
+} */
 
 input {
   display: flex;
@@ -65,13 +75,16 @@ input[type="text"]{
   font-size: 30px;
 }
 
+.results {
+  display: flex;
+}
 
-
-
+ button {
+  margin: 0 auto;
+}
 
 .clicked {
     /* opacity: 100%; */
-    /* animation: shake 0.5s; */
     animation: fadeIn ease 1.5s, shake 0.8s;
     -webkit-animation: fadeIn ease 1.5s , shake 0.8s;
     -moz-animation: fadeIn ease 1.5s , shake 0.8s;

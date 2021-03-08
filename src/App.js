@@ -1,12 +1,13 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import Images from "./Images.js"
-import FortuneReveal from './FortuneReveal'
+import Images from "./Images.js";
+import FortuneReveal from './FortuneReveal';
 import Input from './Input';
 
 function App() {
   const [fortune, setFortune] = useState('');
-  const [isActive] = useState(false)
+  const [isActive, setIsActive] = useState(false);
+  
 
   useEffect(() => {
     // getResults();
@@ -18,29 +19,35 @@ function App() {
         return response.json()
       })
       .then(jsonResponse => {
-        console.log("jsonResponse", jsonResponse)
-        setFortune(jsonResponse.magic.answer)
+        console.log("jsonResponse", jsonResponse);
+        setFortune(jsonResponse.magic.answer);
+        document.querySelector('input').value="";
       })
-
+   
   }
 
   
 
   return (
     <main>
-      <div>
-        <h1>magic 8 ball time</h1>
-        <Input/>
-        <Images />
-        <button type="submit" value="submit" onClick={getResults} className={isActive ? "active" : ""}>click to get fortune</button> 
-        {
-          fortune && 
-          <div className="clicked-fortune">
-            <FortuneReveal/>
-            <p className="fortune-message clicked">{fortune}</p>
-          </div>
-        };
-      </div>
+      <section className="info">
+          <h1>magic 8 ball time</h1>
+          <p>Type your question below</p>
+      </section>
+      <section>
+        <div>
+          <Images />
+          <Input />
+          <button type="submit" value="submit" onClick={getResults} className={isActive ? "active" : ""}>click to get fortune</button> 
+          {
+            fortune && 
+            <div className="clicked-fortune">
+              <FortuneReveal/>
+              <p className="fortune-message clicked">{fortune}</p>
+            </div>
+          }
+        </div>
+      </section>
     </main>
   )
 }
