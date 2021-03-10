@@ -5,8 +5,8 @@ const Input = () => {
 
     return (
         <div className="question-container">
-            <label htmlFor="question">Type your question below</label>
-            <input type="text" id="question"/>
+            <input type="text" id="question" placeholder="Should I buy a llama? Do birds like me? ...etc."/>
+            <label htmlFor="question">Type your question above</label>
         </div>
     )
 }

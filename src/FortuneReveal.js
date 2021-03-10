@@ -1,9 +1,12 @@
+import React from 'react';
 
 
-function FortuneReveal () {
+const FortuneReveal = ({fortune}) => {
     return (
         <div className="fortune-appear">
-            <img src="./assets/8ballmagic.png" alt="results triangle" className="middle clicked" />
+            <div class="final-fortune">
+                <p className="fortune-message clicked">{fortune}</p>
+            </div>
         </div>
     )
 }

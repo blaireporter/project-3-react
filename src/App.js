@@ -1,17 +1,18 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import Images from "./Images.js";
+import MagicEightBallImage from "./MagicEightBallImage";
 import FortuneReveal from './FortuneReveal';
 import Input from './Input';
+// import './assets/css/fonts.css';
 
 function App() {
   const [fortune, setFortune] = useState('');
-  const [isActive, setIsActive] = useState(false);
-  
+  const [isShaken, setIsShaken] = useState(false);
+
 
   useEffect(() => {
     // getResults();
-  },[])
+  }, [])
 
   const getResults = () => {
     fetch('https://8ball.delegator.com/magic/JSON/""')
@@ -21,32 +22,27 @@ function App() {
       .then(jsonResponse => {
         console.log("jsonResponse", jsonResponse);
         setFortune(jsonResponse.magic.answer);
-        document.querySelector('input').value="";
+        document.querySelector('input').value = "";
       })
-   
+      setIsShaken(true);
   }
-
-  
 
   return (
     <main>
       <section className="info">
-          <h1>magic 8 ball time</h1>
-          <p>Type your question below</p>
+        <h1>magic 8 ball time</h1>
+        <p>Ask the magic 8 ball and reveal your future</p>
+        <Input />
+        <button type="submit" value="submit" onClick={getResults}  >click to get fortune</button>
       </section>
-      <section>
-        <div>
-          <Images />
-          <Input />
-          <button type="submit" value="submit" onClick={getResults} className={isActive ? "active" : ""}>click to get fortune</button> 
+      <section className="magic-eight-ball">
+          <MagicEightBallImage shake={isShaken}/>
           {
-            fortune && 
+            fortune &&
             <div className="clicked-fortune">
-              <FortuneReveal/>
-              <p className="fortune-message clicked">{fortune}</p>
+              <FortuneReveal fortune={fortune}/>
             </div>
           }
-        </div>
       </section>
     </main>
   )
@@ -54,6 +50,7 @@ function App() {
 
 export default App;
 
+// className = { isActive? "clicked": "" }
 
 // onChange = {< FortuneReveal className = "clicked" />}
 
