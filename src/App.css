@@ -233,6 +233,11 @@ label {
     margin-left: 40%;
   }
 }
+@media(max-width:550px) {
+  label {
+    display: none;
+  }
+}
 
 input[type="text"]{
   font-size: calc(0.6rem + 0.7vw);
@@ -243,6 +248,13 @@ input[type="text"]{
   border:  2px solid white;
   padding: 10px;
   color:  #fff;
+}
+
+@media(max-width: 550px) {
+  input[type="text"]{
+    margin: 20px 30%;
+    width: 200px;
+  }
 }
 
 input[type="text"]:hover,
@@ -272,6 +284,12 @@ input::placeholder{
 @media(max-width:1000px) {
   button {
    margin-left: 40%;
+  }
+}
+@media(max-width: 550px) {
+  button {
+    margin: 20px 30%;
+    width: 200px;
   }
 }
 
