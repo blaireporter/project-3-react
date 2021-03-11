@@ -43,7 +43,7 @@ function App() {
         <MagicEightBallImage/>
           {
             fortune &&
-            <div className={isShaken ? "shook" : "clicked"}>
+            <div className={isShaken ? "clicked2" : "clicked"}>
               <FortuneReveal fortune={fortune}/>
           </div>
           }

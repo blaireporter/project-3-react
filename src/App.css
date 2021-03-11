@@ -140,11 +140,11 @@ button:focus {
 
 .clicked {
     opacity: 100%;
-    animation: shake 1.2s;
-    -webkit-animation:  shake 1.2s;
-    -moz-animation:  shake 1.2s;
-    -o-animation:  shake 1.2s;
-    -ms-animation:  shake 1.2s;
+    animation: fadeIn ease 3s, shake 1.2s;
+    -webkit-animation: fadeIn ease 3s , shake 1.2s;
+    -moz-animation: fadeIn ease 3s , shake 1.2s;
+    -o-animation: fadeIn ease 3s , shake 1.2s;
+    -ms-animation: fadeIn ease 3s , shake 1.2s;
 }
 
 .shake {
@@ -163,13 +163,13 @@ button:focus {
     -ms-animation:  shook 1s;
 }
 
-/* .clicked2 {
+.clicked2 {
     animation: shook 1.2s, fadeIn ease 8.5s;
     -webkit-animation:  shook 1.2s, fadeIn ease 8.5s;
     -moz-animation:  shook 1.2s, fadeIn ease 8.5s;
     -o-animation:  shook 1.2s, fadeIn ease 8.5s;
     -ms-animation:  shook 1.2s, fadeIn ease 8.5s;
-} */
+}
 
 
 @keyframes shake {
@@ -186,10 +186,10 @@ button:focus {
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-/* @keyframes fadeIn {
+@keyframes fadeIn {
 0% {opacity:0;}
 100% {opacity:1;}
-} */
+}
 
 
 @keyframes shook {
