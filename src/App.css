@@ -140,7 +140,7 @@ h1 {
 @media(max-width:550px) {
   .ball{
     width: 300px;
-    margin-left: 20%;
+    margin-left: 10%;
   }
 }
 
