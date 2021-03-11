@@ -31,7 +31,6 @@ function App() {
       setIsShaken(!isShaken);
   }
 
-
   return (
     <main className="background">
       <section className="info">
@@ -54,19 +53,4 @@ function App() {
 
 export default App;
 
-// className = { isActive? "clicked": "" }
-
-// onChange = {< FortuneReveal className = "clicked" />}
-
-// return (
-//     <div>
-//       <h1>magic 8 ball time</h1>
-//       <button onClick={() => setFortune(!fortune)} >click to get fortune</button>
-//       {
-//         fortune === true
-//           ? <p>{fortune}</p>
-//           : <p>type your question above</p>
-//       }
-//     </div>
-//   )
 
