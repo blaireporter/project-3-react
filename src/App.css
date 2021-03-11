@@ -140,7 +140,7 @@ h1 {
 @media(max-width:550px) {
   .ball{
     width: 300px;
-    margin-left: 10%;
+    margin-left: 15%;
   }
 }
 
@@ -197,7 +197,7 @@ h1 {
   .fortune-message {
     margin-top: 370px;
     max-width: 50px;
-    margin-left:-20px;
+    margin-left:-35px;
     transform: translateX(1%);
     transform: translateY(20%);
   }
