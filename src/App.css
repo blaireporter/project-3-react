@@ -30,8 +30,7 @@ main {
 /* *********INFO AND FORM SECTION******* */
 .titles,
 input,
-label,
-button {
+label {
   margin-left: 150px;
 }
 .titles {
@@ -111,6 +110,7 @@ input::placeholder{
   display:  inline-block;
   float:  none;
   color:  #fff;
+  margin-left: 150px;
 }
 button:hover,
 button:focus {
