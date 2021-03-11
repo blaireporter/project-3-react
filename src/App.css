@@ -253,6 +253,7 @@ input[type="text"]{
 @media(max-width: 550px) {
   input[type="text"]{
     margin: 0 auto;
+    margin-top: 20px;
     width: 200px;
   }
 }
