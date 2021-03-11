@@ -2,11 +2,14 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import MagicEightBallImage from "./MagicEightBallImage";
 import FortuneReveal from './FortuneReveal';
+import TitleText from './TitleText';
 import Input from './Input';
+
 // import './assets/css/fonts.css';
 
 function App() {
   const [fortune, setFortune] = useState('');
+  const [isShook, setIsShook] = useState(false);
   const [isShaken, setIsShaken] = useState(false);
 
 
@@ -24,24 +27,25 @@ function App() {
         setFortune(jsonResponse.magic.answer);
         document.querySelector('input').value = "";
       })
-      setIsShaken(true);
+      setIsShook(!isShook);
+      setIsShaken(!isShaken);
   }
 
+
   return (
-    <main>
+    <main className="background">
       <section className="info">
-        <h1>magic 8 ball time</h1>
-        <p>Ask the magic 8 ball and reveal your future</p>
+        <TitleText/>
         <Input />
-        <button type="submit" value="submit" onClick={getResults}  >click to get fortune</button>
+        <button type="submit" value="submit" onClick={getResults}>shake me</button>
       </section>
-      <section className="magic-eight-ball">
-          <MagicEightBallImage shake={isShaken}/>
+      <section className={isShook ? "shook" : "shake"}>
+        <MagicEightBallImage/>
           {
             fortune &&
-            <div className="clicked-fortune">
+            <div className={isShaken ? "shook" : "clicked"}>
               <FortuneReveal fortune={fortune}/>
-            </div>
+          </div>
           }
       </section>
     </main>

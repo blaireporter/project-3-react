@@ -1,12 +1,10 @@
 import React from 'react';
 
 
-const FortuneReveal = ({fortune}) => {
+const FortuneReveal = ({ fortune }) => {
     return (
-        <div className="fortune-appear">
-            <div class="final-fortune">
-                <p className="fortune-message clicked">{fortune}</p>
-            </div>
+        <div className="fortune-container">
+            <p className="fortune-message">{fortune}</p>
         </div>
     )
 }

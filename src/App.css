@@ -8,96 +8,168 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 .visuallyHidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
 
-body {
-  background: url(./backgroundimage.png);
-  background-size: cover;
-  height: 100vh;
-  font-family: 'Concert One', cursive;
-  text-transform: uppercase;
+
+* {
+    font-family: 'Concert One', cursive;
+    color: white;
+    text-transform: uppercase;
 }
 
 main {
+  height: 100vh;
   display: flex;
 }
+
+
+.background {
+  background: url(./backgroundimage.png);
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  animation: animatedBackground 10s linear infinite alternate;
+}
+
 .info,
 .magic-eight-ball {
   width: 50%;
 }
 
 
+/* *********INFO AND FORM SECTION******* */
+.titles {
+  margin-left: 200px;
+  text-shadow: 3px 3px rgb(252, 74, 163), 3.8px 3.8px black;
+}
+
+h1 {
+  margin-top: 200px;
+  font-size: calc(2rem + 2vw);
+}
+
+.titles p {
+  font-size: calc(1rem + 1vw);
+  margin-top: 20px;
+}
+
 /* ********EIGHTBALL SECTION******** */
-
-/* .magic-eight-ball{
-  position: relative;
-}
-.clicked-fortune {
-  position: absolute;
-  top: 0%;
-} */
-
-.final-fortune {
-  position: relative;
+.ball {
+  max-width: 100%;
+  margin-top: 100px;
+  z-index: 1;
 }
 
-.final-fortune p {
-  position: absolute;
+.fortune-container{
+  position: sticky;
+  margin-top: -54%;
+  margin-left: 205px;
+  max-width: 100%;
+  height: auto;
 }
 
+.fortune-message {
+  max-width: 100px;
+  font-size: 1rem;
+  text-align: center;
+  text-shadow: none;
+  height: 200px;
+  overflow:hidden;
+  float:left;
+  z-index: 4;
+  min-height: 300px;
+  max-height: auto;
+  float: left;
 
-
-/* .fortune-message {
-} */
-
+}
+/* **********INPUT SECTION ********** */
 input {
   display: flex;
-  margin-top: 300px;
+  margin-top: 100px;
   margin-bottom: 10px;
-  margin-left: 50px;
+  margin-left: 200px;
+
 }
 
 label {
-  margin-left: 50px;
+  font-size: calc(0.6rem + 0.7vw);
+  margin-left: 200px;
 }
 
 input[type="text"]{
-  font-family: 'Concert One', cursive;
-  width: 400px;
-  font-size: 1rem;
+  font-size: calc(0.6rem + 0.7vw);
+  width: 350px;
   padding: 10px;
   text-transform: uppercase;
+  background:  transparent;
+  border:  2px solid white;
+  padding: 10px;
+  color:  #fff;
 }
 
-.results {
-  display: flex;
+input[type="text"]:hover,
+input[type="text"]:focus {
+  background: black;
+}
+
+input::placeholder{
+  color: white;
 }
 
 
  button {
   text-transform: uppercase;
-  font-family: 'Concert One', cursive;
   font-size: 1.5rem;
   margin: 0 auto;
   margin-top: 30px;
   animation: fadeIn ease 2s;
-  margin-left: 50px;
+  margin-left: 200px;
+  background:  transparent;
+  border:  2px solid white;
+  padding: 10px;
+  display:  inline-block;
+  float:  none;
+  color:  #fff;
 }
+
+button:hover,
+button:focus {
+  background: black;
+}
+
+
+
+/* ********ANIMATION EVENTS******* */
 
 .clicked {
-    /* opacity: 100%; */
-    animation: fadeIn ease 2s, shake 1.2s;
-    -webkit-animation: fadeIn ease 2s , shake 1.2s;
-    -moz-animation: fadeIn ease 2s , shake 1.2s;
-    -o-animation: fadeIn ease 2s , shake 1.2s;
-    -ms-animation: fadeIn ease 2s , shake 1.2s;
-}
-
-.shake {
+    opacity: 100%;
     animation: shake 1.2s;
     -webkit-animation:  shake 1.2s;
     -moz-animation:  shake 1.2s;
     -o-animation:  shake 1.2s;
     -ms-animation:  shake 1.2s;
 }
+
+.shake {
+  animation: shake 1.2s;
+  -webkit-animation:  shake 1.2s;
+  -moz-animation:  shake 1.2s;
+  -o-animation:  shake 1.2s;
+  -ms-animation:  shake 1.2s;
+}
+
+.shook {
+    animation: shook 1s;
+    -webkit-animation:  shook 1s;
+    -moz-animation:  shook 1s;
+    -o-animation:  shook 1s;
+    -ms-animation:  shook 1s;
+}
+
+/* .clicked2 {
+    animation: shook 1.2s, fadeIn ease 8.5s;
+    -webkit-animation:  shook 1.2s, fadeIn ease 8.5s;
+    -moz-animation:  shook 1.2s, fadeIn ease 8.5s;
+    -o-animation:  shook 1.2s, fadeIn ease 8.5s;
+    -ms-animation:  shook 1.2s, fadeIn ease 8.5s;
+} */
 
 
 @keyframes shake {
@@ -114,10 +186,38 @@ input[type="text"]{
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-@keyframes fadeIn {
+/* @keyframes fadeIn {
 0% {opacity:0;}
 100% {opacity:1;}
+} */
+
+
+@keyframes shook {
+  0% { transform: translate(2px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(1px, 2px) rotate(0deg); }
+  40% { transform: translate(2px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-1px, 1px) rotate(0deg); }
+  70% { transform: translate(1px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(2px, 2px) rotate(0deg); }
+  100% { transform: translate(2px, -2px) rotate(-1deg); }
 }
+
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
+
+
+
 
 
 
