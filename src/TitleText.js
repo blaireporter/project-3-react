@@ -6,5 +6,4 @@ const TitleText = () => {
         </div>
     )
 }
-
 export default TitleText;

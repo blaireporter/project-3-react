@@ -1,21 +1,14 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import MagicEightBallImage from "./MagicEightBallImage";
 import FortuneReveal from './FortuneReveal';
 import TitleText from './TitleText';
 import Input from './Input';
 
-// import './assets/css/fonts.css';
-
 function App() {
   const [fortune, setFortune] = useState('');
   const [isShook, setIsShook] = useState(false);
   const [isShaken, setIsShaken] = useState(false);
-
-
-  useEffect(() => {
-    // getResults();
-  }, [])
 
   const getResults = () => {
     fetch('https://8ball.delegator.com/magic/JSON/""')
@@ -30,7 +23,6 @@ function App() {
       setIsShook(!isShook);
       setIsShaken(!isShaken);
   }
-
   return (
     <main className="background">
       <section className="info">
@@ -50,7 +42,4 @@ function App() {
     </main>
   )
 }
-
 export default App;
-
-

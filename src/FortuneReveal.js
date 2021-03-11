@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const FortuneReveal = ({ fortune }) => {
     return (
         <div className="fortune-container">
@@ -8,5 +7,4 @@ const FortuneReveal = ({ fortune }) => {
         </div>
     )
 }
-
 export default FortuneReveal;
